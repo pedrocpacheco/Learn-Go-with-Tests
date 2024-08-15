@@ -6,10 +6,10 @@ package main
 import "testing"
 
 func TestHello(t *testing.T) {
-	got := Hello("Chris")   // Got the return of the function
-	want := "Hello, Chris!" // Want the String "Hello World!"
+	got := Hello("Exemplo")
+	want := "Hello, Exemplo"
 
 	if got != want {
-		t.Errorf("got %q, want %q", got, want) // ! Failing -> Hello, World! != Hello World!
+		t.Errorf("got %q, want %q", got, want)
 	}
 }
