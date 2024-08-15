@@ -1,4 +1,4 @@
-// ! Lets create a tes for the function Hello()
+// ! Lets create a test for the function Hello()
 // ? We separated our domain to better testing
 
 package main
