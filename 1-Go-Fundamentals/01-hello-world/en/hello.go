@@ -2,16 +2,12 @@ package main
 
 import "fmt"
 
-// ! Separating our domains
+const englishHelloPrefix = "Hello, "
 
-// * The printed String is our domain
 func Hello(name string) string {
-	return "Hello, " + name + "!"
+	return englishHelloPrefix + name
 }
 
-// * fmt.Println() is an outside domain
 func main() {
 	fmt.Println(Hello("world"))
 }
-
-// go run hello.go
