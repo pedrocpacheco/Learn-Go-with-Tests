@@ -7,12 +7,12 @@ import "testing"
 
 func TestHello(t *testing.T) {
 	// assinatura t.Run -> func (t *T) Run(name string, f func(t *T)) bool
-	t.Run("saying hello to people", func(t *testing.T) {
+	t.Run("say hello to people", func(t *testing.T) {
 		got := Hello("Exemplo", "")
 		want := "Hello, Exemplo"
 		assertCorrertMessage(t, got, want)
 	})
-	t.Run("say 'Hello, World' when an empty string is supplied", func(t *testing.T) {
+	t.Run("'Hello, World' for empty string", func(t *testing.T) {
 		got := Hello("", "")
 		want := "Hello, World"
 		assertCorrertMessage(t, got, want)
@@ -27,6 +27,12 @@ func TestHello(t *testing.T) {
 	t.Run("in French", func(t *testing.T) {
 		got := Hello("Daryl", "French")
 		want := "Bonjour, Daryl"
+		assertCorrertMessage(t, got, want)
+	})
+
+	t.Run("in Portuguese", func(t *testing.T) {
+		got := Hello("Pedro", "Portuguese")
+		want := "Ola, Pedro"
 		assertCorrertMessage(t, got, want)
 	})
 }
