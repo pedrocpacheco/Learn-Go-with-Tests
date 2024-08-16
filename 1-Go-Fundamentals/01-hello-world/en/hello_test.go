@@ -8,13 +8,19 @@ import "testing"
 func TestHello(t *testing.T) {
 	// assinatura t.Run -> func (t *T) Run(name string, f func(t *T)) bool
 	t.Run("saying hello to people", func(t *testing.T) {
-		got := Hello("Exemplo")
+		got := Hello("Exemplo", "")
 		want := "Hello, Exemplo"
 		assertCorrertMessage(t, got, want)
 	})
 	t.Run("say 'Hello, World' when an empty string is supplied", func(t *testing.T) {
-		got := Hello("")
+		got := Hello("", "")
 		want := "Hello, World"
+		assertCorrertMessage(t, got, want)
+	})
+
+	t.Run("in Spanish", func(t *testing.T) {
+		got := Hello("Eloide", "Spanish")
+		want := "Hola, Eloide"
 		assertCorrertMessage(t, got, want)
 	})
 }
