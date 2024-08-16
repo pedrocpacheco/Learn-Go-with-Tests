@@ -2,33 +2,42 @@ package main
 
 import "fmt"
 
-const spanish = "Spanish"
-const french = "French"
-const portuguese = "Portuguese"
-const englishHelloPrefix = "Hello, "
-const spanishHelloPrefix = "Hola, "
-const frenchHelloPrefix = "Bonjour, "
-const portugueseHelloPrefix = "Ola, "
+// Constants declared in bloco
+const (
+	spanish    = "Spanish"
+	french     = "French"
+	portuguese = "Portuguese"
+
+	englishHelloPrefix    = "Hello, "
+	spanishHelloPrefix    = "Hola, "
+	frenchHelloPrefix     = "Bonjour, "
+	portugueseHelloPrefix = "Ola, "
+)
 
 func Hello(name, language string) string {
 	if name == "" {
 		name = "World"
 	}
 
-	// Default Prefix
-	prefix := englishHelloPrefix
+	return greetingPrefix(language) + name
+}
 
-	// Switch-Case to alter Prefix if needed
+/*
+Private Function -> 1st letter in lowercase
+Named Return -> Cria variavel "prefix" dentro da função
+*/
+func greetingPrefix(language string) (prefix string) {
 	switch language {
-	case spanish:
-		prefix = spanishHelloPrefix
 	case french:
 		prefix = frenchHelloPrefix
 	case portuguese:
 		prefix = portugueseHelloPrefix
+	case spanish:
+		prefix = spanishHelloPrefix
+	default:
+		prefix = englishHelloPrefix
 	}
-
-	return prefix + name
+	return // retorna a variavel nomeada na assinatura
 }
 
 func main() {
