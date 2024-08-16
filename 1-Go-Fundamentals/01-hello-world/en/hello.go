@@ -4,9 +4,11 @@ import "fmt"
 
 const spanish = "Spanish"
 const french = "French"
+const portuguese = "Portuguese"
 const englishHelloPrefix = "Hello, "
 const spanishHelloPrefix = "Hola, "
 const frenchHelloPrefix = "Bonjour, "
+const portugueseHelloPrefix = "Ola, "
 
 func Hello(name, language string) string {
 	if name == "" {
@@ -22,8 +24,8 @@ func Hello(name, language string) string {
 		prefix = spanishHelloPrefix
 	case french:
 		prefix = frenchHelloPrefix
-	case "Portuguese":
-		prefix = "Ola, "
+	case portuguese:
+		prefix = portugueseHelloPrefix
 	}
 
 	return prefix + name
