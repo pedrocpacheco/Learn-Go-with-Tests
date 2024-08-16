@@ -22,6 +22,8 @@ func Hello(name, language string) string {
 		prefix = spanishHelloPrefix
 	case french:
 		prefix = frenchHelloPrefix
+	case "Portuguese":
+		prefix = "Ola, "
 	}
 
 	return prefix + name
