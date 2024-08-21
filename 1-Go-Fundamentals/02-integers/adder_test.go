@@ -1,6 +1,9 @@
 package integers
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestAdd(t *testing.T) {
 	sum := Add(2, 2)
@@ -9,5 +12,10 @@ func TestAdd(t *testing.T) {
 	if sum != expected {
 		t.Errorf("Expected %d, got %d", expected, sum)
 	}
+}
 
+func ExampleAdd() {
+	soma := Add(1, 5)
+	fmt.Println(soma)
+	// Output: 6
 }
